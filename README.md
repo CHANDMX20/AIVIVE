@@ -10,7 +10,7 @@
 - [Introduction](#introduction)
 - [Files](#files)
   - [Preprocessing](#preprocessing)
-  - [GenLocGAN Model Development & Training](#genlocgan-model-development--training)
+  - [GenLocGAN Model Development, Training & Predictions](#genlocgan-model-development-training--predictions)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -31,36 +31,27 @@ This repository contains code files and models for training the GenLocGAN framew
 
 This folder contains the code and scripts for data preprocessing, specifically focusing on **RMA (Robust Multi-array Average) normalization** and **annotation** of gene expression data. These preprocessing steps are critical for preparing data before training the **GenLocGAN** model.
 
-- **Key Features**:
-  - **RMA Normalization**: Scripts to normalize gene expression data using the RMA method, which is widely used for processing microarray data.
-  - **Gene Annotation**: Scripts to annotate gene expression data with relevant gene identifiers, pathways, and other biological annotations.
-
 **Files**:
-- [`rma_vivo_single.R`](./preprocessing/rma_vivo_single.R) - R script that performs **RMA normalization** on the raw gene expression data.
-- [`rat_annotation.R`](./preprocessing/rat_annotation.R) - R script processes rat gene expression data by extracting probe IDs and merging them with gene annotations to generate a final dataset of unique rat genes used for GenLocGAN model development.
+- [`rma_vivo_single.R`](./preprocessing/rma_vivo_single.R) - R script that performs **RMA normalization** on the raw gene expression data which is widely used for processing microarray data
+- [`rat_annotation.R`](./preprocessing/rat_annotation.R) - R script processes rat gene expression data by extracting probe IDs and merging them with gene annotations (relevant gene identifiers) to generate a final dataset of unique rat genes used for GenLocGAN model development.
 
 These preprocessing steps ensure that the gene expression data is properly prepared for the downstream tasks of training the **GenLocGAN** model.
 
 ---
 
-### 2. **[GenLocGAN Model Development & Training](./training)**
+### **[GenLocGAN Model Development, Training & Predictions](./training)**
 
-This folder contains the core code for developing and training the **GenLocGAN** framework. It includes the implementation of the **modified CycleGAN** model, local optimizers, and other components essential for training the model.
+This folder contains the core code for developing and training the **GenLocGAN** framework. It includes the implementation of the **modified CycleGAN** model and local optimizer networks.
 
-- **Key Features**:
-  - **Training scripts** for the **GenLocGAN** framework.
-  - **CycleGAN model** implementation, including modifications specific to the GenLocGAN framework.
+  - **Modified CycleGAN** framework for translating *in-vitro* transcriptomic profiles to *in-vivo* transcriptomic profiles.
   - **Local optimizers** for enhancing the model's performance.
-  - Code for handling **data preprocessing**, **data augmentation**, and **training loops**.
+  - **Predictions** for generating the test set predictions.
 
 **Files**:
-- `train_genlocgan.py` - Main script used to train the **GenLocGAN** model on your dataset.
-- `cycle_gan.py` - Modified CycleGAN architecture tailored for GenLocGAN's framework.
-- `optimizer.py` - Defines the custom optimizers used during training.
-- `data_loader.py` - Contains data loading logic, including handling of in vitro and in vivo datasets.
-- `config.json` - Configuration file containing model parameters, training options, and hyperparameters.
-
-These scripts and configurations enable the training of the **GenLocGAN** model for generating predictions related to **in vitro-in vivo** extrapolation.
+- [`vitro_vivo_GAN.py`](./training/vitro_vivo_GAN.py) - Modified CycleGAN script to train the **GenLocGAN** model on the IVIVE dataset.
+- [`train_test_samples.py`](./training/train_test_samples.py) - Generating test set predictions using the optimal modified CycleGAN generator.
+- [`optim_neural_net_module#.py`](./training/modules/optim_neural_net_module#.py) - Local optimizer neural network frameworks for specific modules, where `#` refers to the module number (e.g., `optim_neural_net_module20.py`, `optim_neural_net_module23.py`, etc.). These scripts contain implementations for training different modules.
+- [`module_test_evals.py`](./training/modules/module_test_evals.py) - Generating test set predicitons for specific modules using the optimal local optimizers.
 
 ---
 
