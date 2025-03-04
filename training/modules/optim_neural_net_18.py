@@ -25,13 +25,13 @@ from sklearn.preprocessing import MinMaxScaler
 
 #read the data 
 
-train_input = pd.read_csv('/account/mansi.chandra/vitro_vivo/model_2/results/predictions_decoded/test/generator1_encoded_prediction_9962160_VivoGenerator.csv', low_memory = False).iloc[:, 1:]
-train_output = pd.read_csv('/account/mansi.chandra/vitro_vivo/vivo_train.csv', low_memory = False).iloc[:, 1:]
-test_input = pd.read_csv('/account/mansi.chandra/vitro_vivo/model_2/results/predictions_decoded/test/generator1_encoded_prediction_9962160_vivoGenerator_test.csv', low_memory=False).iloc[:, 1:]
-#test_output = pd.read_csv('/account/mansi.chandra/vitro_vivo/vivo_test.csv', low_memory=False).iloc[:, 1:]
+train_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_VivoGenerator.csv', low_memory = False).iloc[:, 1:]
+train_output = pd.read_csv('path/to/vivo_train.csv', low_memory = False).iloc[:, 1:]
+test_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_vivoGenerator_test.csv', low_memory=False).iloc[:, 1:]
+#test_output = pd.read_csv('path/to/vivo_test.csv', low_memory=False).iloc[:, 1:]
 
 # get the gene feature columns
-cols = pd.read_csv('/account/mansi.chandra/vitro_vivo/model_2/results/performance/DEG/paper_train/module18/module18_genes.csv').PROBEID.unique()
+cols = pd.read_csv('path/to/module18_genes.csv').PROBEID.unique()
 print(len(cols))                   
 
 
@@ -176,7 +176,7 @@ def save_preds(preds, X_train, train_input, output_filename):
     return combined_df
  
 #resultPath 
-path = '/account/mansi.chandra/vitro_vivo/model_2/results'
+path = 'path/to/results'
 predsPath = path+'/predictions_decoded/train/module18'
 
 #generated predicitons csv: vivo
