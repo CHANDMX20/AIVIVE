@@ -50,7 +50,7 @@ This folder contains the core code for developing and training the **GenLocGAN**
 **Files**:
 - [`vitro_vivo_GAN.py`](./training/vitro_vivo_GAN.py) - Modified CycleGAN script to train the **GenLocGAN** model on the IVIVE dataset.
 - [`train_test_samples.py`](./training/train_test_samples.py) - Generating test set predictions using the optimal modified CycleGAN generator.
-- [`optim_neural_net_#.py`](./training/modules/optim_neural_net_#.py) - Local optimizer neural network frameworks for specific modules, where `#` refers to the module number (e.g., `optim_neural_net_20.py`, `optim_neural_net_23.py`, etc.). These scripts contain implementations for training different modules.
+- [`optim_neural_net_#.py`](./training/modules) - Local optimizer neural network frameworks for specific modules, where `#` refers to the module number (e.g., `optim_neural_net_20.py`, `optim_neural_net_23.py`, etc.). These scripts contain implementations for training different modules.
 - [`module_test_evals.py`](./training/modules/module_test_evals.py) - Generating test set predicitons for specific modules using the optimal local optimizers.
 
 ---
