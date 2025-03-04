@@ -115,7 +115,7 @@ def save_preds(preds, X_test, test_input, output_filename):
  
 #generated predicitons csv: vivo
 number = '9962160'
-vivo_opt_gen_test = save_preds(predictions, X_test, test_input, resultPath+ '/opt_gen_test' + number + '_Vivo.csv')
+vivo_opt_gen_test = save_preds(predictions, X_test, test_input, resultPath+ '/opt_gen_test' + number + '_Vivo_15.csv')
 
 
 
