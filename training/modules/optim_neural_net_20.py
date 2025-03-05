@@ -25,9 +25,9 @@ from sklearn.preprocessing import MinMaxScaler
 
 #read the data 
 
-train_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_VivoGenerator.csv', low_memory = False).iloc[:, 1:]
-train_output = pd.read_csv('path/to/vivo_train.csv', low_memory = False).iloc[:, 1:]
-test_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_vivoGenerator_test.csv', low_memory=False).iloc[:, 1:]
+train_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_VivoGenerator.csv', low_memory = False).iloc[:, 1:]  #path to generated train predictions
+train_output = pd.read_csv('path/to/vivo_train.csv', low_memory = False).iloc[:, 1:]    #path to real vivo train data
+test_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_vivoGenerator_test.csv', low_memory=False).iloc[:, 1:]   #path to generated test predictions
 #test_output = pd.read_csv('path/to/vivo_test.csv', low_memory=False).iloc[:, 1:]
 
 # get the gene feature columns
@@ -179,9 +179,9 @@ def save_preds(preds, X_train, train_input, output_filename):
 path = 'path/to/results'
 predsPath = path+'/predictions_decoded/train/module20'
 
-#generated predicitons csv: vivo
+#generated csv: vivo train preds for module 20
 number = '9962160'
-vivo_opt_gen_train = save_preds(predictions, X_train, train_input, predsPath+ '/opt_gen_train' + number + '_Vivo.csv')
+vivo_opt_gen_train = save_preds(predictions, X_train, train_input, predsPath+ '/opt_gen_train' + number + '_Vivo_20.csv')
 
 save_final_model(model, predsPath, step=100)  # Use the final epoch as the step
 
