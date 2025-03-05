@@ -181,7 +181,7 @@ predsPath = path+'/predictions_decoded/train/module115'
 
 #generated predicitons csv: vivo train for module 115
 number = '9962160'
-vivo_opt_gen_train = save_preds(predictions, X_train, train_input, predsPath+ '/opt_gen_train' + number + '_Vivo115.csv')
+vivo_opt_gen_train = save_preds(predictions, X_train, train_input, predsPath+ '/opt_gen_train' + number + '_Vivo_115.csv')
 
 save_final_model(model, predsPath, step=50)  # Use the final epoch as the step
 
