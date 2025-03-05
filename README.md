@@ -11,6 +11,7 @@
 - [Files](#files)
   - [Preprocessing](#preprocessing)
   - [GenLocGAN Model Development, Training & Predictions](#genlocgan-model-development-training--predictions)
+  - [DEG Analysis](#deg-analysis)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -50,19 +51,29 @@ This folder contains the core code for developing and training the **GenLocGAN**
 **Files**:
 - [`vitro_vivo_GAN.py`](./training/vitro_vivo_GAN.py) - Modified CycleGAN script to train the **GenLocGAN** model on the IVIVE dataset.
 - [`train_test_samples.py`](./training/train_test_samples.py) - Generating test set predictions using the optimal modified CycleGAN generator.
-- [`optim_neural_net_#.py`](./training/modules) - Local optimizer neural network frameworks for specific modules, where `#` refers to the module number (e.g., `optim_neural_net_20.py`, `optim_neural_net_23.py`, etc.). These scripts contain implementations for training different modules.
+- [`optim_neural_net_#.py`](./training/modules) - Local optimizer neural network frameworks for specific modules, where `#` refers to the module number (e.g., `optim_neural_net_18.py`, `optim_neural_net_20.py`, etc.). These scripts contain implementations for training different modules.
 - [`module_test_evals.py`](./training/modules/module_test_evals.py) - Generating test set predicitons for specific modules using the optimal local optimizers.
 
 ---
 
-### 2. **[File Name](./path-to-file)**
+### **[DEG Analysis](./deg_analysis)**
 
-Description of the next file, following the same format as above.
+This folder contains the code and scripts related to **Differentially Expressed Genes (DEG)** analysis for both real and GenLocGAN-generated synthetic profiles. The code is the same for both rat S1500+ and modules gene sets with different input files depending on the task.
 
-- **Key Features**:
-  - Any important functions or capabilities.
-  - Summary of what this file contributes to the project.
+  - **Foldchange Calculation**:  The Foldchange Calculation is the difference of gene expression between treatment and control condition. It is calulcated as: ***Fold Change = Treatment Expression - Control Expression***
 
+  - **DEG Identification**: DEGs were defined as genes with an absolute fold change > 1 in both real and synthetic profiles. It is given by: ***DEG = |FoldChange| > 1***.
+    
+  - **DEG Overlap Calculation**: Measures the overlap between real and generated DEGs by comparing the intersection of both sets and normalizing by the total number of real DEGs.
+It is calculated as: ***Overlap = (DEGs_real ∩ DEGs_generated) / DEGs_real***
+
+**Files**:
+- [`real_fold.py`](./degs/real_fold.py) - Foldchange calculation script for real profiles.
+- [`gen_fold.py`](./degs/gen_fold.py) - Foldchange calculation script for generated profiles (to be used for both rat S1500+ and module genes with modifications in input).
+- [`real_deg.py`](./degs/real_deg.py) - DEG identification script for real profiles.
+- [`gen_union.py`](./degs/gen_union.py) - DEG identification script for generated profiles. For synthetic profiles, an additional step was taken to calculate the union of DEGs across the subgroups of a specific treatment group.  
+- [`overlap_deg.py`](./degs/overlap_deg.py) - DEGs overlap calculation script.
+  
 ---
 
 ### 3. **[File Name](./path-to-file)**
