@@ -13,6 +13,7 @@
   - [GenLocGAN Model Development, Training & Predictions](#genlocgan-model-development-training--predictions)
   - [DEG Analysis](#deg-analysis)
   - [KEGG Pathway Analysis](#kegg-pathway-analysis)
+  - [AOP-Gene Expression Analysis](#aop-gene-expression-analysis)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -87,6 +88,17 @@ This contains code for performing KEGG (Kyoto Encyclopedia of Genes and Genomes)
 - **Files**:
   - [`kegg_pathway.R`](./applications/kegg_pathway.R) - KEGG pathway enrichment analysis. 
   - [`overlap_pathways.py`](./applications/overlap_pathways.py) - Python script for calculating the pathway overlap between real and synthetic profiles.
+
+---
+
+### **[AOP-Gene Expression Analysis](./aop--gene-expression-analysis)**
+
+This contains code for performing **AOP (Adverse Outcome Pathway)** analysis combined with **Gene Expression Analysis**. The goal is to investigate the percentage error in gene expression values between real and GenLocGAN-generated synthetic test profiles for AOP-related genes.
+
+  - **Percentage Error in Gene Expression**: The AOP genes were identified from the rat S1500+ gene set and percentage error was calulcated for the gene expression values between the real and GenLocGAN-generated synthetic profiles. It was calculated as: ***% Error (Gene Expression) = [(Real - Synthetic)/Real] * 100***
+
+- **Files**:
+  -- [`AOP.ipynb`](./applications/AOP.ipynb) - Jupyter notebook for calculating the **percentage error** in gene expression values between real and **GenLocGAN-generated** profiles, followed by **visualization** using a heatmap to identify patterns in gene expression between the two profiles.
 
 ---
 
