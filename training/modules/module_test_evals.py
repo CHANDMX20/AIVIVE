@@ -23,19 +23,18 @@ from random import randint
 import random
 
 # path
-dataPath = '/account/mansi.chandra/vitro_vivo'
 resultPath = 'path/to/test_set/module115'
 # load the vivo generator 
 g_vivo = keras.models.load_model('path/to/predictions_decoded/train/module115/model115_final_epoch_000100.h5') #path to the local optimizer model saved 
 
 #read the data 
 
-train_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_VivoGenerator.csv', low_memory = False).iloc[:, 1:]
-train_output = pd.read_csv('path/to/vivo_train.csv', low_memory = False).iloc[:, 1:]
-test_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_vivoGenerator_test.csv', low_memory=False).iloc[:, 1:]
+train_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_VivoGenerator.csv', low_memory = False).iloc[:, 1:]  #path to generated train predictions
+train_output = pd.read_csv('path/to/vivo_train.csv', low_memory = False).iloc[:, 1:]  #path to real vivo train data
+test_input = pd.read_csv('path/to/generator1_encoded_prediction_9962160_vivoGenerator_test.csv', low_memory=False).iloc[:, 1:]  #path to generated test predictions
 #test_output = pd.read_csv('/account/mansi.chandra/vitro_vivo/vivo_test.csv', low_memory=False).iloc[:, 1:]
 
-# get the gene feature columns
+# get the gene feature columns for specific modules
 cols = pd.read_csv('path/to/module115/module115_genes.csv').PROBEID.unique()
 print(len(cols))                   
 
@@ -113,9 +112,9 @@ def save_preds(preds, X_test, test_input, output_filename):
 
     return combined_df
  
-#generated predicitons csv: vivo
+#generated predicitons csv: vivo for module 115
 number = '9962160'
-vivo_opt_gen_test = save_preds(predictions, X_test, test_input, resultPath+ '/opt_gen_test' + number + '_Vivo_15.csv')
+vivo_opt_gen_test = save_preds(predictions, X_test, test_input, resultPath+ '/opt_gen_test' + number + '_Vivo_115.csv')
 
 
 
