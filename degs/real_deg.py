@@ -7,8 +7,8 @@ import scipy.stats as stats
 # get the gene feature columns
 prob2gene = pd.read_csv('path/to/final_rat_genes.csv')
 cols = prob2gene.PROBEID.unique()
-#vitro_real_foldchange = pd.read_csv('/account/mansi.chandra/vitro_vivo/model_2/results/performance/DEG/foldchangeValues/vitro_foldchanged_real.csv').iloc[:, 1:]
-vivo_real_foldchange = pd.read_csv('/account/mansi.chandra/vitro_vivo/model_2/results/performance/DEG/foldchangeValues/vivo_foldchanged_real.csv').iloc[:, 1:]
+#vitro_real_foldchange = pd.read_csv('path/to/foldchangeValues/vitro_foldchanged_real.csv').iloc[:, 1:]
+vivo_real_foldchange = pd.read_csv('path/to/foldchangeValues/vivo_foldchanged_real.csv').iloc[:, 1:]   #path to real profile's foldchange values
 
 def realdeg(filename, realfoldchange, prob2gene=prob2gene):
     resultDic = {}
