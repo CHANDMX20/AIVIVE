@@ -12,6 +12,7 @@
   - [Preprocessing](#preprocessing)
   - [GenLocGAN Model Development, Training & Predictions](#genlocgan-model-development-training--predictions)
   - [DEG Analysis](#deg-analysis)
+  - [KEGG Pathway Analysis](./kegg-pathway-analysis)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -76,13 +77,16 @@ It is calculated as: ***Overlap = (DEGs_real ∩ DEGs_generated) / DEGs_real***
   
 ---
 
-### 3. **[File Name](./path-to-file)**
+### **[KEGG Pathway Analysis](./kegg_pathway_analysis)**
 
-Description of another file in the project, with a similar format.
+This contains code for performing KEGG (Kyoto Encyclopedia of Genes and Genomes) pathway analysis, which is used to identify biological pathways enriched in differentially expressed genes (DEGs) for understanding underlying biological processes. 
 
-- **Key Features**:
-  - Mention any useful functions or methods.
-  - Example results, if applicable.
+  - **KEGG Pathway Enrichment Analysis**: This step would map genes to known pathways using the KEGG database.
+  - **Pathway Overlap Calculation**: Calculates the overlap of KEGG pathways enriched in real and generated profiles DEGs.
+  
+- **Files**:
+  - [`kegg_pathway.R`](./applications/kegg_pathway.R) - KEGG pathway enrichment analysis. 
+  - [`overlap_pathways.py`](./applications/overlap_pathways.py) - Python script for calculating the pathway overlap between real and synthetic profiles.
 
 ---
 
