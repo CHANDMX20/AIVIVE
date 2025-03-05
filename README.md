@@ -98,7 +98,7 @@ This contains code for performing **AOP (Adverse Outcome Pathway)** analysis com
   - **Percentage Error in Gene Expression**: The AOP genes were identified from the rat S1500+ gene set and percentage error was calulcated for the gene expression values between the real and GenLocGAN-generated synthetic profiles. It was calculated as: ***% Error (Gene Expression) = [(Real - Synthetic)/Real] * 100***
 
 - **Files**:
-  -- [`AOP.ipynb`](./applications/AOP.ipynb) - Jupyter notebook for calculating the **percentage error** in gene expression values between real and **GenLocGAN-generated** profiles, followed by **visualization** using a heatmap to identify patterns in gene expression between the two profiles.
+  - [`AOP.ipynb`](./applications/AOP.ipynb) - Jupyter notebook for calculating the **percentage error** in gene expression values between real and **GenLocGAN-generated** profiles, followed by **visualization** using a heatmap to identify patterns in gene expression between the two profiles.
 
 ---
 
