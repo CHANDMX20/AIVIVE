@@ -29,7 +29,7 @@ This repository contains code files and models for training the GenLocGAN framew
 
 ## Files
 
-### **Preprocessing**
+### **[Preprocessing](./preprocessing)**
 
 This folder contains the code and scripts for data preprocessing, specifically focusing on **RMA (Robust Multi-array Average) normalization** and **annotation** of gene expression data. These preprocessing steps are critical for preparing data before training the **GenLocGAN** model.
 
