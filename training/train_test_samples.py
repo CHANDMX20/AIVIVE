@@ -25,8 +25,8 @@ from random import randint
 import random
 
 # path
-dataPath = '/account/mansi.chandra/vitro_vivo'
-resultPath = '/account/mansi.chandra/vitro_vivo/model_2/results/predictions_decoded/test'
+dataPath = '/path/to/vitro_vivo'  #path to vivo train and test data
+resultPath = '/path/to/results/predictions_decoded/test' #path to store the results
 # load the vivo generator 
 g_vivo = keras.models.load_model('path/to/results/model2/g_model2_9962160.h5')
 # load the vitro generator 
