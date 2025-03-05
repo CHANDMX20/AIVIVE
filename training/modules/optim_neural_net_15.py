@@ -179,9 +179,9 @@ def save_preds(preds, X_train, train_input, output_filename):
 path = 'path/to/results'
 predsPath = path+'/predictions_decoded/train/module15'
 
-#generated predicitons csv: vivo
+#generated csv: vivo train predictions for module 15
 number = '9962160'
-vivo_opt_gen_train = save_preds(predictions, X_train, train_input, predsPath+ '/opt_gen_train' + number + '_Vivo.csv')
+vivo_opt_gen_train = save_preds(predictions, X_train, train_input, predsPath+ '/opt_gen_train' + number + '_Vivo_15.csv')
 
 save_final_model(model, predsPath, step=100)  # Save the model to generated test predictions 
 
