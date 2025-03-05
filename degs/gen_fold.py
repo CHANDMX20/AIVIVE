@@ -40,7 +40,7 @@ path = 'path/to/results'
 
 ### test
 dataPath = path+'/predictions_decoded/test' #path to the generated test predictions 
-degPath = path+'/performance/DEG/foldchangeValues' #path to the foldchange results
+degPath = path+'/performance/DEG/foldchangeValues' #path for saving the foldchange results
 predsPath = path+'/predictions_decoded/test_set/' #path to the combined generated profile post local optimization 
 
 
