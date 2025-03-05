@@ -9,7 +9,7 @@ prob2gene = pd.read_csv('path/to/final_rat_genes.csv')
 cols = prob2gene.PROBEID.unique()
 # true values
 #vitro_data= pd.read_csv('path/to/vitro_train_test.csv', low_memory=False)
-vivo_data = pd.read_csv(''path/to/vivo_train_test.csv', low_memory=False)
+vivo_data = pd.read_csv(''path/to/vivo_train_test.csv', low_memory=False) #path to real vivo train+test data
 
 def foldchangeMap(filename, org, cols=cols):
     resultDf = pd.DataFrame(columns = ['name', *cols])
