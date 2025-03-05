@@ -146,7 +146,7 @@ model = define_optim_net(input_shape, label_shape, output_shape)
 # fit the keras model on the dataset
 history = model.fit([X_train, target_labels], y_train, epochs=50, batch_size=256)
 
-#make preds on the test set
+#make preds on the generated train data
 predictions = model.predict([X_train, target_labels])
 
 def save_final_model(model, predsPath, step):
