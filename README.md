@@ -12,7 +12,7 @@
   - [Preprocessing](#preprocessing)
   - [GenLocGAN Model Development, Training & Predictions](#genlocgan-model-development-training--predictions)
   - [DEG Analysis](#deg-analysis)
-  - [KEGG Pathway Analysis](./kegg-pathway-analysis)
+  - [KEGG Pathway Analysis](#kegg-pathway-analysis)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
