@@ -165,19 +165,22 @@ This folder consists of the data files that were used in model development and t
 ### Prerequisites
 
 Before using this repository, ensure you have the following installed:
-- List any required software or dependencies, e.g., Python, R, specific packages.
-  - For Python:
-    - `numpy`
-    - `pandas`
-    - `matplotlib`
-    - `scikit-learn`
-  - For R:
-    - `SPIEC-EASI`
-    - `igraph`
-    - `ggplot2`
+- Python (version 3.11.7)
+- Tensorflow-GPU (version 2.4.1)
+- R (version 4.4.1)
+- Bioconductor (version 3.19)
+- rat2302.db (version 3.13.0 from Bioconductor version 3.19 release)
+- Other packages specified in the code scripts
 
-### Installing Dependencies
+---
 
-For Python:
-```bash
-pip install -r requirements.txt
+
+
+
+
+
+
+
+
+
+
