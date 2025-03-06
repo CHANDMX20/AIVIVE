@@ -152,9 +152,9 @@ This folder consists of the data files that were used in model development and t
 
   - [`final_rat_genes.csv`](./data/final_rat_genes.csv) - Rat S1500+ gene set used for GenLocGAN model development and training.
   - [`open_tggates_cel_file_attribute.csv`](./open_tggates_cel_file_attribute.csv) - Open TG-GATEs metadata downloaded from [`https://dbarchive.biosciencedbc.jp/en/open-tggates/download.html`]
-  - link to vitro and vivo train and test data 
-
-
+  - link to vitro and vivo train and test data
+  - [`modules_genes`](./modules_genes) - Module gene sets used in local optimization
+  - [`aop_overlap_genes.csv`](./aop_overlap_genes.csv) - AOP genes overlapped with rat S1500+ genes (used for AOP-Gene Expression Analysis)
 
 ---
 
