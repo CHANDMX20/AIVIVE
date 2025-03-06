@@ -72,11 +72,11 @@ This folder contains the code and scripts related to **Differentially Expressed 
 It is calculated as: ***Overlap = (DEGs_real ∩ DEGs_generated) / DEGs_real***
 
 **Files**:
-- [`real_fold.py`](./DEG/real_fold.py) - Foldchange calculation script for real profiles.
-- [`gen_fold.py`](./DEG/gen_fold.py) - Foldchange calculation script for generated profiles (to be used for both rat S1500+ and module genes with modifications in input).
-- [`real_deg.py`](./DEG/real_deg.py) - DEG identification script for real profiles.
-- [`gen_union.py`](./DEG/gen_union.py) - DEG identification script for generated profiles. For synthetic profiles, an additional step was taken to calculate the union of DEGs across the subgroups of a specific treatment group.  
-- [`overlap_deg.py`](./DEG/overlap_deg.py) - DEGs overlap calculation script.
+- [`real_fold.py`](./degs/real_fold.py) - Foldchange calculation script for real profiles.
+- [`gen_fold.py`](./degs/gen_fold.py) - Foldchange calculation script for generated profiles (to be used for both rat S1500+ and module genes with modifications in input).
+- [`real_deg.py`](./degs/real_deg.py) - DEG identification script for real profiles.
+- [`gen_union.py`](./degs/gen_union.py) - DEG identification script for generated profiles. For synthetic profiles, an additional step was taken to calculate the union of DEGs across the subgroups of a specific treatment group.  
+- [`overlap_deg.py`](./degs/overlap_deg.py) - DEGs overlap calculation script.
   
 ---
 
