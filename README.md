@@ -8,7 +8,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Files](#files)
+- [Code Scripts](#code-scripts)
   - [Preprocessing](#preprocessing)
   - [GenLocGAN Model Development, Training & Predictions](#genlocgan-model-development-training--predictions)
   - [DEG Analysis](#deg-analysis)
@@ -16,6 +16,7 @@
   - [AOP-Gene Expression Analysis](#aop-gene-expression-analysis)
   - [Necrosis Prediction Model](#necrosis-prediction-model)
   - [Model Evaluation](#model-evaluation)
+- [Data Files](#data-files)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -30,7 +31,7 @@ This repository contains code files and models for training the GenLocGAN framew
 
 ---
 
-## Files
+## Code Scripts
 
 ### **[Preprocessing](./preprocessing)**
 
@@ -144,6 +145,19 @@ This contains the scripts for performing GenLocGAN model evaluation on the test 
   - [`positive_control.py`](./applications/positive_control.py) - For calculating the metrics for positive control group.
     
 ---
+
+## Data Files
+
+This folder consists of the data files that were used in model development and training. 
+
+  - [`final_rat_genes.csv`](./data/final_rat_genes.csv) - Rat S1500+ gene set used for GenLocGAN model development and training.
+  - [`open_tggates_cel_file_attribute.csv`](./open_tggates_cel_file_attribute.csv) - Open TG-GATEs metadata downloaded from [`https://dbarchive.biosciencedbc.jp/en/open-tggates/download.html`]
+  - link to vitro and vivo train and test data 
+
+
+
+---
+
 
 ## Installation
 
