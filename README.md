@@ -18,11 +18,8 @@
   - [Model Evaluation](#model-evaluation)
 - [Data Files](#data-files)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
-
+  
 ---
 
 ## Introduction
@@ -174,13 +171,8 @@ Before using this repository, ensure you have the following installed:
 
 ---
 
+## License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-
-
-
-
-
-
-
-
+---
