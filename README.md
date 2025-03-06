@@ -155,6 +155,7 @@ This folder consists of the data files that were used in model development and t
   - link to vitro and vivo train and test data
   - [`modules_genes`](./data/modules_genes) - Module gene sets used in local optimization
   - [`aop_overlap_genes.csv`](./data/aop_overlap_genes.csv) - AOP genes overlapped with rat S1500+ genes (used for AOP-Gene Expression Analysis)
+  - [`necrosis_df.csv`](./data/necrosis_df.csv) - Pathological findings (from Open TG-GATEs)
 
 ---
 
