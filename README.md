@@ -149,7 +149,7 @@ This folder consists of the data files that were used in model development and t
 
   - [`final_rat_genes.csv`](./data/final_rat_genes.csv) - Rat S1500+ gene set used for GenLocGAN model development and training.
   - [`open_tggates_cel_file_attribute.csv`](./data/open_tggates_cel_file_attribute.csv) - Open TG-GATEs metadata downloaded from [`https://dbarchive.biosciencedbc.jp/en/open-tggates/download.html`]
-  - [`rat_vitro_vivo_train_test`](./https://zenodo.org/uploads/14984579?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY4Y2EwMmRhLWIzZDUtNGNjOS1hMjkwLTQ5ZDYwMzI2YzA4MCIsImRhdGEiOnt9LCJyYW5kb20iOiJiNGZjYTZmMGRmZDNhY2M4MGM0MzdlYzBhN2Q2NGQwOCJ9.ZuJ21SnVbRv5fywNeTpYbjlouhxtbGuF7Lm7U7qhkap8TLaXFY2-e2wL1hA_pMAUpl_3Be7X1c8km2UiUL6c1g) - Rat liver *in vitro* and *in vivo*(single dose) transcriptomic profiles that are RMA 
+  - [`rat_vitro_vivo_train_test`](./https://zenodo.org/uploads/14984579?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY4Y2EwMmRhLWIzZDUtNGNjOS1hMjkwLTQ5ZDYwMzI2YzA4MCIsImRhdGEiOnt9LCJyYW5kb20iOiJiNGZjYTZmMGRmZDNhY2M4MGM0MzdlYzBhN2Q2NGQwOCJ9.ZuJ21SnVbRv5fywNeTpYbjlouhxtbGuF7Lm7U7qhkap8TLaXFY2-e2wL1hA_pMAUpl_3Be7X1c8km2UiUL6c1g) - Rat liver *in vitro* and *in vivo*(single dose) transcriptomic profiles that are RMA normalized. The data is split into train (80%) and test (20%) set based on unique compounds.
   - [`modules_genes`](./data/modules_genes) - Module gene sets used in local optimization
   - [`aop_overlap_genes.csv`](./data/aop_overlap_genes.csv) - AOP genes overlapped with rat S1500+ genes (used for AOP-Gene Expression Analysis)
   - [`necrosis_df.csv`](./data/necrosis_df.csv) - Pathological findings (from Open TG-GATEs)
