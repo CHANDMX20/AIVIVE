@@ -44,14 +44,14 @@ These preprocessing steps ensure that the gene expression data is properly prepa
 
 ### **[GenLocGAN Model Development, Training & Predictions](./training)**
 
-This folder contains the core code for developing and training the **GenLocGAN** framework. It includes the implementation of the **modified CycleGAN** model and local optimizer networks.
+This folder contains the core code for developing and training the **GenLocGAN** framework. It includes the implementation of a **GAN-based translator** model and local optimizers networks.
 
-  - **Modified CycleGAN** framework for translating *in-vitro* transcriptomic profiles to *in-vivo* transcriptomic profiles.
+  - **GAN-Based Translator** framework for translating *in-vitro* transcriptomic profiles to *in-vivo* transcriptomic profiles.
   - **Local optimizers** for enhancing the model's performance.
   - **Predictions** for generating the test set predictions.
 
 **Files**:
-- [`vitro_vivo_GAN.py`](./training/vitro_vivo_GAN.py) - Modified CycleGAN script to train the **GenLocGAN** model on the IVIVE dataset.
+- [`vitro_vivo_GAN.py`](./training/vitro_vivo_GAN.py) - GAN-based translator framework script to train the **GenLocGAN** model on the IVIVE dataset.
 - [`train_test_samples.py`](./training/train_test_samples.py) - Generating test set predictions using the optimal modified CycleGAN generator.
 - [`optim_neural_net_#.py`](./training/modules) - Local optimizer neural network frameworks for specific modules, where `#` refers to the module number (e.g., `optim_neural_net_18.py`, `optim_neural_net_20.py`, etc.). These scripts contain implementations for training different modules.
 - [`module_test_evals.py`](./training/modules/module_test_evals.py) - Generating test set predicitons for specific modules using the optimal local optimizers.
