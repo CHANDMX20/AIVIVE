@@ -1,6 +1,6 @@
 # GenLocGAN
 
-**GenLocGAN** is a novel **Generative Adversarial Network (GAN)** framework that combines a **GAN-based translator** with local optimizers. It uses biologically meaningful **gene clusters (modules)** to facilitate the demonstration of ***In Vitro-In Vivo*** **Extrapolation (IVIVE)**.
+**GenLocGAN** is a novel **Generative Adversarial Network (GAN)** framework that combines a **GAN-based translator** with local optimizers. It uses biologically meaningful **gene clusters (modules)** to facilitate the demonstration of ***in vitro-in vivo*** **extrapolation (IVIVE)**.
 
 
 ---
