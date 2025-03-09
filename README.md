@@ -58,7 +58,7 @@ This folder contains the core code for developing and training the **GenLocGAN**
 
 ---
 
-### **[DEG Analysis](./deg_analysis)**
+### **[DEG Analysis](./degs)**
 
 This folder contains the code and scripts related to **Differentially Expressed Genes (DEG)** analysis for both real and GenLocGAN-generated synthetic profiles. The code is the same for both rat S1500+ and modules gene sets with different input files depending on the task.
 
