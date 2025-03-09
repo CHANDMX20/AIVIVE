@@ -131,7 +131,7 @@ This contains the scripts for performing GenLocGAN model evaluation on the test 
     
 ---
 
-## Data Files
+## **[Data Files](./data)**
 
 This folder consists of the data files that were used in model development and training. 
 
