@@ -19,6 +19,9 @@ rat_genes = pd.read_csv('/path/to/final_rat_genes.csv').PROBEID.unique()
 #subset the vivo train for rat S1500+ gene set
 vivo_train = pd.concat([vivo_train.iloc[:, :19], vivo_train[rat_genes]], axis=1)
 
+#remove Control
+vivo_train = vivo_train[vivo_train['DOSE_LEVEL'] != 'Control']
+
 # Add treatment column to the data frames
 vivo_train['treatment'] = vivo_train['COMPOUND_NAME'] + '_' + vivo_train['DOSE_LEVEL'].astype(str) + '_' + vivo_train['SACRIFICE_PERIOD'].astype(str)
 necrosis_df['treatment'] = necrosis_df['COMPOUND_NAME'] + '_' + necrosis_df['DOSE_LEVEL'].astype(str) + '_' + necrosis_df['SACRIFICE_PERIOD'].astype(str)
@@ -68,19 +71,9 @@ y = new_df['FINDING_TYPE']
 # Ensure the target is in a binary format, for example, encoding "Necrosis positive" as 1 and "Necrosis negative" as 0
 y = y.map({'Necrosis Positive': 1, 'Necrosis Negative': 0})
 
-
-# Scale the features to standardize them
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-
-#model1 = LogisticRegression(penalty = 'l2', C = 0.1)
-model1 = xgb.XGBClassifier(n_estimators=100, learning_rate=0.1, max_depth=10, random_state=42)
-model2 = SVC(kernel='rbf', C=1, gamma='scale', random_state=42, class_weight='balanced')
-model3 = RandomForestClassifier(n_estimators=200, random_state=42, class_weight='balanced')
-
-ensemble_model = VotingClassifier(estimators=[('xg', model1), ('svm', model2), ('rf', model3)], voting='hard')
-ensemble_model.fit(X_scaled, y)
+#XGBoost model 
+xg_model = xgb.XGBClassifier(n_estimators=100, learning_rate=0.1, max_depth=10, random_state=42)
+xg_model.fit(X, y)
 
 
 ## Model Evaluation on Real Test Set
@@ -92,6 +85,8 @@ vivo_real = pd.read_csv('/path/to/vivo_test.csv', low_memory=False)
 vivo_real = pd.concat([vivo_real.iloc[:, :19], vivo_real[rat_genes]], axis=1)
 #create treatment column
 vivo_real['treatment'] = vivo_real['COMPOUND_NAME'] + '_' + vivo_real['DOSE_LEVEL'].astype(str) + '_' + vivo_real['SACRIFICE_PERIOD'].astype(str)
+#remove control
+vivo_real = vivo_real[vivo_real['DOSE_LEVEL'] != 'Control']
 
 #Group by 'treatment' and calculate the mean of gene expression columns
 real_df = vivo_real.groupby('treatment')[gene_columns].mean().reset_index()
@@ -119,24 +114,20 @@ real_y = real_necrosis['FINDING_TYPE']
 # Ensure the target is in a binary format, for example, encoding "Necrosis positive" as 1 and "Necrosis negative" as 0
 real_y = real_y.map({'Necrosis Positive': 1, 'Necrosis Negative': 0})
 
-# Scale the features to standardize them
-real_X_scaled = scaler.fit_transform(real_X)
-
-#predict on the test set 
-voting_real_preds = ensemble_model.predict(real_X_scaled)
+#predict on the real test set
+xg_real_preds = xg_model.predict(real_X)
 
 # Calculate accuracy
-voting_real_accuracy = accuracy_score(real_y, voting_real_preds)
-print(f'Accuracy: {voting_real_accuracy * 100:.2f}%')
+xg_real_accuracy = accuracy_score(real_y, xg_real_preds)
+print(f'Accuracy: {xg_real_accuracy * 100:.2f}%')
 
 # Confusion matrix
 print('Confusion Matrix:')
-print(confusion_matrix(real_y, voting_real_preds))
+print(confusion_matrix(real_y, xg_real_preds))
 
 # Classification report
 print('Classification Report:')
-print(classification_report(real_y, voting_real_preds))
-
+print(classification_report(real_y, xg_real_preds))
 
 ## Model Evaluation on Synthetic Test Profile
 
@@ -147,6 +138,8 @@ vivo_syn = pd.read_csv('/path/to/combined_opt_gan_test9962160_Vivo.csv', low_mem
 vivo_syn = pd.concat([vivo_syn.iloc[:, :23], vivo_syn[rat_genes]], axis=1)
 # create treatment column
 vivo_syn['treatment'] = vivo_syn['COMPOUND_NAME'] + '_' + vivo_syn['targetDose'].astype(str) + '_' + vivo_syn['targetTime'].astype(str)
+#remove control
+vivo_syn = vivo_syn[vivo_syn['targetDose'] != 'Control']
 
 # Identify feature columns (non-numeric, excluding 'treatment')
 syn_feature_cols = vivo_syn.iloc[:, list(range(23)) + [-1]].columns
@@ -176,23 +169,20 @@ syn_y = syn_necrosis['FINDING_TYPE']
 # Ensure the target is in a binary format, for example, encoding "Necrosis positive" as 1 and "Necrosis negative" as 0
 syn_y = syn_y.map({'Necrosis Positive': 1, 'Necrosis Negative': 0})
 
-# Scale the features to standardize them
-syn_X_scaled = scaler.fit_transform(syn_X)
-
-# make predictions on the test set 
-voting_syn_preds = ensemble_model.predict(syn_X_scaled)
+# make predictions on the synthetic test set 
+xg_syn_preds = xg_model.predict(syn_X)
 
 # Calculate accuracy
-voting_syn_accuracy = accuracy_score(syn_y, voting_syn_preds)
-print(f'Accuracy: {voting_syn_accuracy * 100:.2f}%')
+xg_syn_accuracy = accuracy_score(syn_y, xg_syn_preds)
+print(f'Accuracy: {xg_syn_accuracy * 100:.2f}%')
 
 # Confusion matrix
 print('Confusion Matrix:')
-print(confusion_matrix(syn_y, voting_syn_preds))
+print(confusion_matrix(syn_y, xg_syn_preds))
 
 # Classification report
 print('Classification Report:')
-print(classification_report(syn_y, voting_syn_preds))
+print(classification_report(syn_y, xg_syn_preds))
 
 
 
