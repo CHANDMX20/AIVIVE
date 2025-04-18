@@ -44,7 +44,9 @@ def biology_duplicate(data, filename, features=features):
 resultPath = '/path/to/results/performance/positiveControl'
 
 vivoTest = pd.read_csv('/path/to/vivo_test.csv')  #path to vivo test data
-biology_duplicate(vivoTest, resultPath+'/vivo_test_cosine_rmse_mape_biology_duplicates.csv')
+vivoTest_dose = vivoTest[vivoTest['DOSE_LEVEL'] != 'Control']
+
+biology_duplicate(vivoTest_dose, resultPath+'/vivo_test_cosine_rmse_mape_biology_duplicates.csv')
  
 #vivoTrain = pd.read_csv('/account/mansi.chandra/vitro_vivo/vivo_train.csv')
 #biology_duplicate(vivoTrain, resultPath+'/vivo_train_cosine_rmse_mape_biology_duplicates.csv')
