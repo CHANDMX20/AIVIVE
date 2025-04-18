@@ -15,6 +15,8 @@ print(len(features))
 # true values
 vitro_vivo= pd.read_csv('/path/to/vitro_vivo_train_test.csv', low_memory=False)  #path to real train and test data
 
+#remove control treatments
+vitro_vivo = vitro_vivo[vitro_vivo['DOSE_LEVEL'] != 'Control']
 
 #calculate the cosine in vitro or vivo
 def control_oneExp_cosine(data, filename, features=features):
