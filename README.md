@@ -1,4 +1,4 @@
-# AIVIVE
+# AIVIVE: AI-aided ***In Vitro-In Vivo*** Extrapolation
 
 **AIVIVE** is a novel **Generative Adversarial Network (GAN)** framework that combines a **GAN-based translator** with local optimizers. It uses biologically meaningful **gene clusters (modules)** to facilitate the demonstration of ***in vitro-in vivo*** **extrapolation (IVIVE)**.
 
