@@ -4,6 +4,9 @@
 
 **The paper is published in ***Toxicological Sciences*** and can be accessed via ***https://doi.org/10.1093/toxsci/kfaf100***
 
+## Architecture
+
+![AIVIVE architecture](aivive.png)
 ---
 
 ## Table of Contents
