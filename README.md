@@ -9,7 +9,7 @@
 
 ---
 
-![AIVIVE architecture](aivive.png)
+![AIVIVE architecture](docs/aivive.png)
 
 ---
 
