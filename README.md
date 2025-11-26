@@ -7,6 +7,7 @@
 ## Architecture
 
 ![AIVIVE architecture](aivive.png)
+
 ---
 
 ## Table of Contents
